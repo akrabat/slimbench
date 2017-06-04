@@ -12,7 +12,10 @@
 
         docker-compose up
 
-Run siege locally:
+4. Results will be displayed.
+
+
+Alternatively, to run siege locally:
 
     alias siege="docker run -ti --rm -u $UID -v `pwd`:/data -v ~/.siegerc:/root/.siegerc centminmod/docker-centos6-siege siege"
     siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v2-empty/public && siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v3-empty/public && siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v4-empty/public
