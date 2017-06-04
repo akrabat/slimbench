@@ -4,12 +4,18 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 
 # Install Docker
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 sudo apt-get update
-apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
+sudo apt-get install -y docker-ce
 sudo usermod -aG docker $(whoami)
+
+# Docker Compose
+sudo curl -o /usr/local/bin/docker-compose -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m`
+sudo chmod a+x /usr/local/bin/docker-compose
 
 # Install composer
 sudo apt-get install -y php7.0-cli
