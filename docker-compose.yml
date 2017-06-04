@@ -1,0 +1,22 @@
+# docker-compose.dev.yml
+version: '2'
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: ./docker/phpapache.dockerfile
+    ports:
+      - "8888:80"
+    volumes:
+      - ./:/var/www/html:ro
+      - ./docker/apache.conf:/etc/apache2/sites-enabled/000-default.conf
+
+  siege:
+    image: centminmod/docker-centos6-siege
+    depends_on:
+        - web
+    volumes:
+      - ./bin:/root/bin:ro
+    command: /bin/bash -c "sleep 5; /root/bin/siege.sh"
+
