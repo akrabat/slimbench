@@ -35,7 +35,7 @@ for site in "${!sites[@]}"; do
 
     echo "$site ($url)" &>> /root/siege.txt
     siege --log=/root/siege.log -q -t 30s -c 10 -b $url &>> /root/siege.txt
-    curl -X POST -H "Content-Type: application/json" "$api_url" \
+    curl -s -X POST -H "Content-Type: application/json" "$api_url" \
       -d "{\"label\": \"$site\", \"author\":\"$author\", \"cpu\": \"$cpu\", \"memory\": \"$memory\", \"run_id\": \"$run_id\", \"log\": \"`cat /root/siege.log | tail -n1`\"}"
 
 done
