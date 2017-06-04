@@ -18,14 +18,14 @@ sites=(
 rm -f /root/siege.txt
 for site in "${!sites[@]}"; do
     url=${sites[$site]}
-    echo "Site: $site:";
+    echo "Site: $site ($url):";
 
-    echo "$site" &>> /root/siege.txt
+    echo "$site ($url)" &>> /root/siege.txt
     siege --log=/root/siege.log -q -t 30s -c 10 -b $url &>> /root/siege.txt
 
 done
 
-sleep 5
+sleep 8
 cat /root/siege.txt
 
 
