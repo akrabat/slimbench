@@ -10,7 +10,7 @@
 
 3. Run app
 
-        docker-compose up
+        AUTHOR="Your Name Here" && docker-compose up
 
 4. Results will be displayed.
 

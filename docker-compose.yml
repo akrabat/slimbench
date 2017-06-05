@@ -19,4 +19,5 @@ services:
     volumes:
       - ./bin:/root/bin:ro
     command: /bin/bash -c "sleep 5; /root/bin/siege.sh"
-
+    environment:
+      - AUTHOR
