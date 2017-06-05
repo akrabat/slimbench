@@ -1,6 +1,6 @@
 # Slim Benchmarks
 
-
+Run a simple "Hello World" Slim application for v2, v3 & v4 and [log the reports to a CouchDB instance][1].
 
 ## Running on a fresh Ubuntu 16.04 (e.g. Amazon AWS)
 
@@ -39,3 +39,6 @@ Alternatively, to run siege locally:
 
     (check IP address as Docker sets it)
 
+
+
+[1]: https://github.com/akrabat/slimbench/blob/master/bin/siege.sh#L35-L36
