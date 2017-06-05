@@ -4,9 +4,9 @@
 
 2. Install composer dependencies:
 
-        cd v2-empty && composer update -a
-        cd v3-empty && composer update -a
-        cd v4-empty && composer update -a
+        cd v2-empty && composer update -a --no-dev
+        cd v3-empty && composer update -a --no-dev
+        cd v4-empty && composer update -a --no-dev
 
 3. Run app
 

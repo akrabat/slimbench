@@ -26,9 +26,9 @@ sudo mv composer /usr/local/bin/
 rm composer-setup.php
 
 # Setup project
-(cd v2-empty && composer update -a)
-(cd v3-empty && composer update -a)
-(cd v4-empty && composer update -a)
+(cd v2-empty && composer update -a --no-dev)
+(cd v3-empty && composer update -a --no-dev)
+(cd v4-empty && composer update -a --no-dev)
 
 
 echo ""
