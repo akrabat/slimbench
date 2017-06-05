@@ -13,7 +13,7 @@ $ ./setup_ubuntu.sh
 Run test:
 
 ```bash
-$ AUTHOR="Your Name Here" && docker-compose up
+$ export AUTHOR="Your Name Here" && docker-compose up
 ```
 
 ## Notes on running manually
@@ -29,7 +29,7 @@ $ cd v4-empty && composer update -a --no-dev
 Run test:
 
 ```bash
-$ AUTHOR="Your Name Here" && docker-compose up
+$ export AUTHOR="Your Name Here" && docker-compose up
 ```
 
 Alternatively, to run siege locally:
