@@ -1,19 +1,36 @@
 # Slim Benchmarks
 
-1. Checkout repository
 
-2. Install composer dependencies:
 
-        cd v2-empty && composer update -a --no-dev
-        cd v3-empty && composer update -a --no-dev
-        cd v4-empty && composer update -a --no-dev
+## Running on a fresh Ubuntu 16.04 (e.g. Amazon AWS)
 
-3. Run app
+```bash
+$ git clone https://github.com/akrabat/slimbench.git
+$ cd slimbench
+$ ./setup_ubuntu.sh
+```
 
-        AUTHOR="Your Name Here" && docker-compose up
+Run test:
 
-4. Results will be displayed.
+```bash
+$ AUTHOR="Your Name Here" && docker-compose up
+```
 
+## Notes on running manually
+
+```bash
+$ git clone https://github.com/akrabat/slimbench.git
+$ cd slimbench
+$ cd v2-empty && composer update -a --no-dev
+$ cd v3-empty && composer update -a --no-dev
+$ cd v4-empty && composer update -a --no-dev
+```
+
+Run test:
+
+```bash
+$ AUTHOR="Your Name Here" && docker-compose up
+```
 
 Alternatively, to run siege locally:
 
@@ -21,14 +38,4 @@ Alternatively, to run siege locally:
     siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v2-empty/public && siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v3-empty/public && siege -q -t 30s -c 10 -b http://172.17.0.1:8888/v4-empty/public
 
     (check IP address as Docker sets it)
-
-
-
-## Setting up a Ubuntu 16.04 (e.g. Amazon AWS)
-
-
-```bash
-$ git clone https://github.com/akrabat/slimbench.git
-$ cd slimbench
-$ ./setup_ubuntu.sh
 
